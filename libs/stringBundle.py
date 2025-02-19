@@ -26,7 +26,43 @@ class StringBundle:
 
     def __init__(self, create_key, locale_str):
         assert(create_key == StringBundle.__create_key), "StringBundle must be created using StringBundle.getBundle"
-        self.id_to_message = {}
+        self.id_to_message = {
+            'create': 'Criar',
+            'createDetail': 'Criar novo retângulo',
+            'edit': 'Editar',
+            'editDetail': 'Editar retângulo',
+            'copy': 'Copiar',
+            'copyDetail': 'Copiar retângulo',
+            'paste': 'Colar',
+            'pasteDetail': 'Colar retângulo',
+            'delete': 'Apagar',
+            'deleteDetail': 'Apagar retângulo',
+            'save': 'Salvar',
+            'saveDetail': 'Salvar arquivo',
+            'saveAs': 'Salvar Como',
+            'saveAsDetail': 'Salvar arquivo como',
+            'open': 'Abrir',
+            'openDetail': 'Abrir arquivo',
+            'close': 'Fechar',
+            'closeDetail': 'Fechar arquivo',
+            'openFile': 'Abrir Arquivo',
+            'openFileDetail': 'Abrir arquivo de imagem',
+            'openDir': 'Abrir Diretório',
+            'openDirDetail': 'Abrir diretório de imagens',
+            'changeSaveDir': 'Mudar Diretório de Salvamento',
+            'changeSavedAnnotationDir': 'Mudar diretório de anotações salvas',
+            'openAnnotation': 'Abrir Anotação',
+            'openAnnotationDetail': 'Abrir arquivo de anotação',
+            'createMode': 'Modo Criar',
+            'editMode': 'Modo Editar',
+            'copyAll': 'Copiar Todas as Boxes',
+            'pasteAll': 'Colar Todas as Boxes',
+            'deleteAll': 'Apagar Boxes no Intervalo',
+            'deleteSelected': 'Apagar Selecionadas',
+            'pasteInterval': 'Colar em Intervalo',
+            'pasteIntervalDetail': 'Colar boxes em um intervalo de imagens'
+        }
+
         paths = self.__create_lookup_fallback_list(locale_str)
         for path in paths:
             self.__load_bundle(path)

@@ -79,13 +79,15 @@ def format_shortcut(text):
     return '<b>%s</b>+<b>%s</b>' % (mod, key)
 
 
-def generate_color_by_text(text):
+def generate_color_by_text(text, total_classes=100):
     s = ustr(text)
     hash_code = int(hashlib.sha256(s.encode('utf-8')).hexdigest(), 16)
+    saturation = 255 - (hash_code % 50)
     r = int((hash_code / 255) % 255)
     g = int((hash_code / 65025) % 255)
     b = int((hash_code / 16581375) % 255)
-    return QColor(r, g, b, 100)
+    return QColor(r, g, b, 200)
+    
 
 
 def have_qstring():
